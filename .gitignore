@@ -44,3 +44,6 @@ coverage/
 # Sistema
 .DS_Store
 Thumbs.db
+
+# archivos
+credentials.json

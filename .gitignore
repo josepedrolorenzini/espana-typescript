@@ -1,0 +1,46 @@
+# Variables de entorno en cualquier carpeta
+.env
+.env.*
+
+# Dependencias
+node_modules/
+
+# Compilaciones
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
+# Logs
+*.log
+
+# Configuración del editor
+.idea/
+.vscode/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.dbT
+# Variables de entorno
+.env
+.env.*
+
+# Dependencias
+node_modules/
+
+# Compilaciones
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
+# Logs
+*.log
+
+# Editores
+.idea/
+.vscode/
+
+# Sistema
+.DS_Store
+Thumbs.db

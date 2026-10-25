@@ -1,15 +1,23 @@
-import { useEffect } from "react";
+import { useEffect} from "react";
+import type { spainObj } from "../helpers/types";
 import { barcelonaTask } from "../helpers/funciones";
 
-function MyTasks() {
+interface MyTasksProps {
+  tasks: spainObj;
+}
+
+function MyTasks({ tasks }: MyTasksProps) {
+   
+    
    useEffect(() => {
     console.log(barcelonaTask)
-   }, [])
+   }, []) ;
+
   return (
     <>
     <div>MyTasks</div>
     <div>{
-    barcelonaTask.beforeGo?.map((task) => 
+    tasks.beforeGo?.map((task) => 
         <li key={task}>{task}</li>)
         }</div>
     </>

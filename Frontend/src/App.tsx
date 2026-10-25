@@ -3,9 +3,21 @@ import laRepublica from './assets/la-republica.jpg'
 import './App.css'
 import Submit from './components/Submit';
 import MyTasks from './components/MyTasks';
+import { barcelonaTask } from './helpers/funciones';
+import type { spainObj } from './helpers/types';
 
 function App() {
-  const [count, setCount] = useState(0)
+   // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [tasks, setTasks] = useState<spainObj>(barcelonaTask);
+  const [count, setCount] = useState(0) ; 
+
+ 
+  function addTask(text: string) {
+    setTasks((previous: spainObj) => ({
+      ...previous,
+      beforeGo: [...(previous.beforeGo ?? []), text],
+    }));
+  }
 
   return (
     <>
@@ -29,9 +41,15 @@ function App() {
       </section>
       <section 
       id="FormSubmit">
-       <Submit/>
+          <Submit onAddTask={addTask}/>
       </section>
-      <MyTasks/>
+     { // tasks={tasks} este props es para pasarle el objeto barcelonaTask a MyTasks, que es un componente que recibe un objeto de tipo spainObj y lo renderiza en una lista.
+      // en este caso, el objeto barcelonaTask es un objeto que contiene tres propiedades: beforeGo, arriving y alicante, que son arrays de strings. 
+      // MyTasks recibe este objeto y lo renderiza en una lista de tareas.
+      }
+      <MyTasks 
+      tasks={tasks}
+       />
 
       <div className="ticks"></div>
 
